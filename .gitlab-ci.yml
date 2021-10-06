@@ -1,0 +1,29 @@
+deploy_review:
+  only:
+    - review
+    - main
+  stage: deploy
+  script:
+    - echo "job TO DELPOY review"
+    
+
+deploy_release:
+  only:
+    - release
+    - main
+  stage: deploy
+  script:
+    - echo "Job for deploy_release"
+  environment:
+    name: production
+  
+
+deploy_staging:
+  only:
+    - staging
+    - main
+  stage: deploy
+  script:
+    - echo "Job for deploy staging"
+  environment:
+    name: staging
